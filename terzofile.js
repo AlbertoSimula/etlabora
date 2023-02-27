@@ -8,5 +8,5 @@ var dog; crea variabile, ma senza valore => undefined
 console.log(dog);
 var dog = 3;
 
-Processo chiamato Hoistin
-*/
+Processo chiamato Hoisting
+*/                                                                                                                    

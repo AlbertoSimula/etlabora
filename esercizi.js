@@ -53,7 +53,8 @@ if(t==0 || t==-d){
 */
 
 /*funzione*/
-var d=2;
+
+/*var d=2;
 function isEven(n){
     var t=n;
     do{
@@ -66,4 +67,15 @@ function isEven(n){
 };
 
 var res = isEven(10);
+console.log(res);
+*/
+/*funzioni ricorsive*/
+var res = 1;
+function fattoriale(n){
+    if(n==0){
+        return res;
+    }
+    return res = n*fattoriale(n-1)
+}
+fattoriale(10);
 console.log(res);
