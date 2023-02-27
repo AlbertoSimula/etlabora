@@ -9,10 +9,10 @@ for (var i=1; i<=100; i=i+2){
     
     
 /*esercizio paridispari*/
-var n=11;
+var n=10;
 var d=2;
 var i=1;
-while (d*i<=n) {
+while (d*i<n){
     i=i+1;
 };
 if(d*i==n){
