@@ -1,7 +1,7 @@
 /*esercizio for*/
 /*a%b se da 0, l'if ritorna false*/
 /*potevo usare anche NOT mettendo !davanti alla parentesi dell'if*/
-
+/*messi i prompt per fare degli input, ma è solo per provarli*/ 
 
 for (var i=1; i<=100; i=i+2){
     if (i%5==0) {
@@ -50,7 +50,7 @@ if(t==0 || t==-d){
 
 /*funzione*/
 
-var d=2;
+var d=prompt(("dimmi un numero, che mi serve un incremento"),"");
 function isEven(n){
     var t=n;
     do{
@@ -62,7 +62,7 @@ function isEven(n){
     return("Dispari");
 };
 
-var res = isEven(10);
+var res = isEven(prompt("dimmi un numero e capisco se è pari o dispari"), "");
 console.log(res);
 
 /*funzioni ricorsive*/
@@ -73,5 +73,5 @@ function fattoriale(n){
     }
     return res = n*fattoriale(n-1)
 }
-fattoriale(10);
+fattoriale(prompt("dimmi un numero e ci faccio il fattoriale"), "");
 console.log(res);
