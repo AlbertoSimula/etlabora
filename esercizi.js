@@ -21,10 +21,21 @@ if(d*i==n){
     console.log("il numero " + n + " diviso per " + d + " da resto quindi è disparo")
 };
 /*metodo for*/
-for(var i=1; i<n/d; i=i+1){
+for(var i=1; i<n/d; i=i+1){ /*utile, ma poco elegante*/
 }
 if(d*i==n){
     console.log("il numero " + n + " diviso per " + d + " non da resto quindi è paro")
 } else{
     console.log("il numero " + n + " diviso per " + d + " da resto quindi è disparo")
 };
+/*sottrazione*/
+var n= 9;
+var t=n;
+do{
+    t=t-2;
+} while(t>0);
+if(t==0){
+    console.log(n + "è pari")
+} else{
+    console.log(n + " è dispari")
+}
