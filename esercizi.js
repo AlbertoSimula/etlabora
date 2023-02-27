@@ -9,7 +9,7 @@ for (var i=1; i<=100; i=i+2){
     
     
 /*esercizio paridispari*/
-var n=10;
+var n=0;
 var d=2;
 var i=1;
 while (d*i<n){
@@ -29,13 +29,14 @@ if(d*i==n){
     console.log("il numero " + n + " diviso per " + d + " da resto quindi è disparo")
 };
 /*sottrazione*/
-var n= 9;
+var n=0;
 var t=n;
+var d=2;
 do{
-    t=t-2;
+    t=t-d;
 } while(t>0);
-if(t==0){
-    console.log(n + "è pari")
-} else{
+if(t==0 || t==-d){
+    console.log(n + " è pari")
+}else{
     console.log(n + " è dispari")
 }
