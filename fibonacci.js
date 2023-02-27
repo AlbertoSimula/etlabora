@@ -1,9 +1,9 @@
 var x=0;
-var y=0;
+var y=1;
 var sum = x+y;
-for (var i =0; i<=10; i=i+1) {
-    console.log(sum[i]);
-    x=y;
-    y=sum;
+for(var i = 1; i<=10; i=i+1){
+    console.log(sum)
+    x=y
+    y=sum
 }
 
