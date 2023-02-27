@@ -20,3 +20,11 @@ if(d*i==n){
 } else{
     console.log("il numero " + n + " diviso per " + d + " da resto quindi è disparo")
 };
+/*metodo for*/
+for(var i=1; i<n/d; i=i+1){
+}
+if(d*i==n){
+    console.log("il numero " + n + " diviso per " + d + " non da resto quindi è paro")
+} else{
+    console.log("il numero " + n + " diviso per " + d + " da resto quindi è disparo")
+};
