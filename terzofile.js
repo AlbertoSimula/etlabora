@@ -17,7 +17,7 @@ var o={
     name:"Nome",
     surname: "Cognome",
     sayHi:function(){
-        console.log("Ciao")
+        console.log("Ciao " + this.name + " !")
     } /*Function expression = funzione anonima e assegnazione*/
 };
 
