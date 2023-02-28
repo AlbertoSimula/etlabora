@@ -24,16 +24,11 @@ var o={
 
 o.sayHi(); /*richiamo per eseguire il metodo*/
 
-function newUser(age, name, surname){
-    this.age = age;
-    this.name = name;
-    this.surname = surname
-};
+
 /*modo per definire sempre nuovi user senza ripetere il codice, usato cosi posso definirli
 ogni volta richiamando la nuova funzione usando new e creando una nuova variabile user-i*/
 
-var user1 = new newUser(18, "Bello", "Figo");
-console.log("Ciao " + user1.name + " !");
+
 
 /*metodo ulteriore più ovvio e lineare*/
 function createUser(age, nome, cognome){
@@ -48,3 +43,18 @@ function createUser(age, nome, cognome){
 }
 var user = createUser(15, "Topo", "Lino");
 console.log("Ciao "+ user.nome + " !");
+
+
+/*funzioni costruttrici*/
+function NewUser(age, name, surname){
+    this.age = age;
+    this.name = name;
+    this.surname = surname;
+    this.sayHi = function(){ //anche con le funzioni va cosi
+        console.log("Ciao " + this.nome + " !");
+    }
+};
+var user1 = new NewUser(18, "Bello", "Figo");
+console.log("Ciao " + user1.name + " !");
+/*new è un costrutto particolare, keyword che chiede all'interprete ad allocare nell'HEAP di
+allocare l'oggetto*/
