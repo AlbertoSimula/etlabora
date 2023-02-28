@@ -70,3 +70,4 @@ this.sayHi = (function(){ //anche con le funzioni va cosi
     console.log("Ciao " + this.name + " !");
 }).bind(this);
 */
+
