@@ -34,3 +34,17 @@ ogni volta richiamando la nuova funzione usando new e creando una nuova variabil
 
 var user1 = new newUser(18, "Bello", "Figo");
 console.log("Ciao " + user1.name + " !");
+
+/*metodo ulteriore più ovvio e lineare*/
+function createUser(age, nome, cognome){
+    return{
+        age, //equivale a age: age
+        nome, //come age
+        cognome, //stessa cosa
+        sayHi:function(){
+            console.log("Ciao " + this.nome + " !");
+        }
+    }
+}
+var user = createUser(15, "Topo", "Lino");
+console.log("Ciao "+ user.nome + " !");
