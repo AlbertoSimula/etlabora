@@ -14,11 +14,23 @@ Processo chiamato Hoisting
 /*Oggetti*/
 var o={
     age:18,
-    name:"Nome",
-    surname: "Cognome",
+    nome: "Nome",
+    cognome: "Cognome",
+
     sayHi:function(){
-        console.log("Ciao " + this.name + " !")
+        console.log("Ciao " + this.nome + " !");
     } /*Function expression = funzione anonima e assegnazione*/
 };
 
 o.sayHi(); /*richiamo per eseguire il metodo*/
+
+function newUser(age, name, surname){
+    this.age = age;
+    this.name = name;
+    this.surname = surname
+};
+/*modo per definire sempre nuovi user senza ripetere il codice, usato cosi posso definirli
+ogni volta richiamando la nuova funzione usando new e creando una nuova variabile user-i*/
+
+var user1 = new newUser(18, "Bello", "Figo");
+console.log("Ciao " + user1.name + " !");
