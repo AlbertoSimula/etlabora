@@ -29,7 +29,6 @@ o.sayHi(); /*richiamo per eseguire il metodo*/
 ogni volta richiamando la nuova funzione usando new e creando una nuova variabile user-i*/
 
 
-
 /*metodo ulteriore più ovvio e lineare*/
 function createUser(age, nome, cognome){
     return{
@@ -40,7 +39,7 @@ function createUser(age, nome, cognome){
             console.log("Ciao " + this.nome + " !");
         }
     }
-}
+};
 var user = createUser(15, "Topo", "Lino");
 console.log("Ciao "+ user.nome + " !");
 
@@ -51,10 +50,23 @@ function NewUser(age, name, surname){
     this.name = name;
     this.surname = surname;
     this.sayHi = function(){ //anche con le funzioni va cosi
-        console.log("Ciao " + this.nome + " !");
+        console.log("Ciao " + this.name + " !");
     }
 };
 var user1 = new NewUser(18, "Bello", "Figo");
 console.log("Ciao " + user1.name + " !");
 /*new è un costrutto particolare, keyword che chiede all'interprete ad allocare nell'HEAP di
 allocare l'oggetto*/
+
+/*Quando porto this fuori dal contesto dell'oggetto, perde la sua funzionalità. Esce 
+undefined perchè non trova la proprietà a cui si riferisce*/
+
+var fn = user.sayHi;
+fn();
+
+/*Per rimediare si usa questa soluzione "storica"*/
+/*
+this.sayHi = (function(){ //anche con le funzioni va cosi
+    console.log("Ciao " + this.name + " !");
+}).bind(this);
+*/
