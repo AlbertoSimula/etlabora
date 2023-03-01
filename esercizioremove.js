@@ -6,7 +6,7 @@ for(var i=0; i<listButton.length; i=i+1){
     console.log(elem = listButton[i]);
     var par = elem.parentNode.parentNode;
     console.log(par);
-    function remover(e){
+    function remover(){
         par.remove();
     };
 };
