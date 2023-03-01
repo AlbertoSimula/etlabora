@@ -1,7 +1,11 @@
-var res = document.body.querySelectorAll('table td button');
-
-for(var i = 0; i > 3; i=i+1){
-    console.log(res[i])
-};
-
-console.log(res);
+var listButton = document.body.querySelectorAll('table td button');
+/*var i = prompt(("dimmi che bottone vuoi togliere"),"")*/
+for(var i=0; i<listButton.length; i=i+1){
+    console.log(elem = listButton[i]);
+    par = elem.parentNode.parentNode;
+    console.log(par);
+    function remover(){
+        par.remove();
+    };
+    var es = elem.addEventListener("click", remover);
+}
