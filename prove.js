@@ -5,7 +5,6 @@ for(var i = 0; i<listButton.length; i=i+1){
     var par = elem.parentNode.parentNode;
     console.log(par);
 };
-function remover(){
+elem.addEventListener("click", ()=>{
     par.remove();
-};
-elem.addEventListener("click", remover);
+});
