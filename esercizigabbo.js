@@ -153,3 +153,18 @@ function funzione(){
 };
 input.addEventListener("click", funzione);
 input.removeEventListener(funzione);
+
+principali eventi
+
+click 
+contextmenu
+mouseover/out 
+mousedown/up 
+mousemove
+
+submit 
+focus 
+
+keydown/up 
+
+DOMContentLoaded
