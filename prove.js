@@ -7,6 +7,5 @@ for(var i = 0; i<listButton.length; i=i+1){
 };
 function remover(){
     par.remove();
-    console.log("eliminato")
 };
 var es = elem.addEventListener("click", remover);
