@@ -123,3 +123,33 @@ del.remove();
     <div></div>
 </body>
 
+///
+
+events listener 
+
+per interagire con un evento andremo a creare una funzione chiamata handler
+
+1 metodo (meno utilizzato e meno efficace) = andare a scrivere direttamente nel tag HTML la parola 
+chiave onevent = "funzione"
+
+
+esempio
+<input onclick = "alert("")">
+
+il problema è che un tag accetto al più una funzione
+
+2 metodo(meno utilizzato e meno efficace) = scrivere nel file js questa sintassi 
+
+input.onclick = function (){
+ //codice da eseguire
+}
+il problema è che un tag accetto al più una funzione
+
+3 metodo (più efficace e piu utilizzato) = .addEventListener(event, handler)
+
+
+function funzione(){
+
+};
+input.addEventListener("click", funzione);
+input.removeEventListener(funzione);
