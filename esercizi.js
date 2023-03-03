@@ -76,3 +76,4 @@ function fattoriale(n){
 fattoriale(prompt("dimmi un numero e ci faccio il fattoriale"), "");
 console.log(res);
 
+/*esercizi bubbling*/
