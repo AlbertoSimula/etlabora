@@ -82,8 +82,14 @@ console.log(res);
 /*esercizi bubbling*/
 
 var sub = document.body.querySelectorAll("body form button");
-sub.addEventListener("click", function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    
-});
+
+for(i=0; i<sub.length; i++){
+    sub[i].addEventListener("click", function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        var email = document.body.querySelector("#email");
+        console.log(email.value);
+        var psswd = document.body.querySelector("#password")
+        console.log(psswd.value);
+    });
+}
