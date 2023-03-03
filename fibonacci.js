@@ -1,9 +1,11 @@
-var x=0;
-var y=1;
-var sum = x+y;
-for(var i = 1; i<=10; i=i+1){
-    console.log(sum)
-    x=y
-    y=sum
+var a = [0, 1];
+var x = a[0];
+var y = a[1];
+var i = 2;
+var limit = 5;
+while(i<limit){
+    return a[i]=(a[i-1]+a[-2]);
+    i=i+1;
 }
 
+console.log(a);
