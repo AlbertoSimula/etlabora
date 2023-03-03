@@ -81,15 +81,14 @@ console.log(res);
 */
 /*esercizi bubbling*/
 
-var sub = document.body.querySelectorAll("body form button");
+var butts = document.body.querySelectorAll("form button");
 
-for(i=0; i<sub.length; i++){
-    sub[i].addEventListener("click", function(e){
+for(i=0; i<butts.length; i++){
+    butts[i].addEventListener("click", function(e){
         e.preventDefault();
-        e.stopPropagation();
-        var email = document.body.querySelector("#email");
+        var email = document.body.querySelector('input[name="email"]'); /*meglio evitare di usare gli id, usare cose del genere*/
         console.log(email.value);
-        var psswd = document.body.querySelector("#password")
+        var psswd = document.body.querySelector('input[name="password"]')
         console.log(psswd.value);
     });
-}
+};
