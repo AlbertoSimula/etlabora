@@ -35,7 +35,7 @@ xhr.addEventListener("load", function(){
     var tbody = document.querySelector("tbody");
     users.forEach(function(user){
         tbody.innerHTML = tbody.innerHTML.concat(
-            '<tr class="riga">',
+            '<tr class="riga" data-user-id="',user.id,'">', /*se voglio classificare le righe, posso dare alla riga un data-attribute come data-user-id= "',user.id,'"*/
                     '<td class="user">', user.id, '</td>',
                     '<td class="email">', user.email, '</td>',
                     '<td class="name">', user.name,  '</td>',
@@ -45,13 +45,24 @@ xhr.addEventListener("load", function(){
                 '</tr>'
         )
     });
-/*se messo fuori non sare*/
+/*se messo fuori non parte*/
     var listButton = document.body.querySelectorAll('.btn');
 
     for(var i = 0; i<listButton.length; i=i+1){
         listButton[i].addEventListener("click", function(e){
-            e.target.parentElement.parentElement.remove();
-        })
+            var row = e.target.parentElement.parentElement;
+            var xhr = new XMLHttpRequest();
+            /*queste nuove cose sono chiamate sotto verbo delete per togliere le righe. 200 è la risposta del BackEnd per effettuata cancellazione*/
+            xhr.open("DELETE","https://jsonplaceholder.typicode.com/users/".concat(row.dataset.userId));
+            xhr.addEventListener("load", function(){
+                if(xhr.status === 200){
+                    row.remove()
+                } else{
+                    console.error("Errore");
+                }
+            }); 
+            xhr.send();
+        });
     }; 
 });
 
