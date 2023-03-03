@@ -25,4 +25,34 @@ for(var i = 0; i<listButton.length; i=i+1){
  * target prende solamente l'elemento che subisce l'evento
  */
 
+/*xmlhttprequest*/
 
+var xhr = new XMLHttpRequest();
+
+xhr.open("GET", "https://jsonplaceholder.typicode.com/users");
+xhr.addEventListener("load", function(){
+    var users = JSON.parse(xhr.responseText);
+    var tbody = document.querySelector("tbody");
+    users.forEach(function(user){
+        tbody.innerHTML = tbody.innerHTML.concat(
+            '<tr class="riga">',
+                    '<td class="user">', user.id, '</td>',
+                    '<td class="email">', user.email, '</td>',
+                    '<td class="name">', user.name,  '</td>',
+                    '<td>',
+                        '<button class="btn"> Elimina </button>',
+                    '</td>',
+                '</tr>'
+        )
+    });
+
+var listButton = document.body.querySelectorAll('.btn');
+
+for(var i = 0; i<listButton.length; i=i+1){
+    listButton[i].addEventListener("click", function(e){
+        e.target.parentElement.parentElement.remove();
+    })
+}; 
+})
+
+xhr.send();
