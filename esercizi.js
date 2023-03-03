@@ -87,7 +87,7 @@ for(i=0; i<butts.length; i++){
     butts[i].addEventListener("click", function(e){
         e.preventDefault();
         var email = document.body.querySelector('input[name="email"]'); /*meglio evitare di usare gli id, usare cose del genere*/
-        console.log(email.value);
+        console.log(email.value);                                          /*potevo scrivere direttamente email.value e prendeva uguale*/
         var psswd = document.body.querySelector('input[name="password"]')
         console.log(psswd.value);
     });
