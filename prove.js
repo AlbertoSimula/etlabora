@@ -21,6 +21,8 @@ for(var i = 0; i<listButton.length; i=i+1){
         e.target.parentElement.parentElement.remove();
     })
 }; 
-/* e sempre per mettere l'argomento come parametro della funzione
+/* e sempre per mettere l'argomento come parametro della funzione (callback, richiamo della funzione)
  * target prende solamente l'elemento che subisce l'evento
  */
+
+
