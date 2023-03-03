@@ -46,6 +46,7 @@ xhr.addEventListener("load", function(){
         )
     });
 
+/*se messo fuori non sare*/
 var listButton = document.body.querySelectorAll('.btn');
 
 for(var i = 0; i<listButton.length; i=i+1){
