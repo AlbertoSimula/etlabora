@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-    entry: './path/to/my/entry/file.js',
+    entry: './src/esercizi.js', /*di solito è index.js*/
     output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'my-first-webpack.bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'app.bundle.js',
     },
 };
