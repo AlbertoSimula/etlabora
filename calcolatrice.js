@@ -113,6 +113,7 @@ class Prodotti{
 class VendorMachine {
     #_products;
     #_display;
+    #_price;
 
     get products (){
         return this.#_products;
@@ -120,12 +121,16 @@ class VendorMachine {
     get display(){
         return this.#_display;
     }
-    constructor(products){
+    get price(){
+        return this.#_price
+    }
+    constructor(products, display, price){
         this.#_products = products;
         this.#_display = "Seleziona il prodotto";
+        this.#_price = 0;
     };
-    
-    }
+}
+console.debug(VendorMachine.isThePrice(0.20));
 class Prodotti{
     constructor(name, brand, codice, prezzo){
         this.name = name;
@@ -148,6 +153,5 @@ for (let outeridx = 0; outeridx < 3; outeridx ++){
         products[outeridx].push(productsBox[outeridx]);
     }
 }
-
 const vMachine = new VendorMachine(products);
 console.debug(vMachine.products);
