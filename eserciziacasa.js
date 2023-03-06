@@ -1,9 +1,10 @@
-var xhr = new XMLHttpRequest();
+let xhr = new XMLHttpRequest();
 
 xhr.open("GET", "https://jsonplaceholder.typicode.com/posts");
+
 xhr.addEventListener("load", function(){
-    var cards = JSON.parse(xhr.responseText);
-    var tbody = document.querySelector("body div");
+    const cards = JSON.parse(xhr.responseText);
+    const tbody = document.querySelector("div");
     cards.forEach(function(card){
         tbody.innerHTML = tbody.innerHTML.concat(
             '<div class="data-card="',card.id,'">',
