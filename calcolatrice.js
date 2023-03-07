@@ -109,12 +109,18 @@ class Prodotti{
 
 */
 
+/*rivedere a casa*/
 
 class VendorMachine {
     #_products;
     #_display;
     #_price;
 
+    constructor(products){
+        this.#_products = products;
+        this.#_display = "Seleziona il prodotto";
+        this.#_price = 0;
+    };
     get products (){
         return this.#_products;
     }
@@ -124,13 +130,32 @@ class VendorMachine {
     get price(){
         return this.#_price
     }
-    constructor(products, display, price){
-        this.#_products = products;
-        this.#_display = "Seleziona il prodotto";
-        this.#_price = 0;
-    };
+
+    #_isAffordable(product, price) {
+        return product.prezzo <= price;
+    }
+
+    control(productCode){
+        if(!this.#_products[productCode]){
+            this.#_display = "Prodotto non esistente";
+            return;
+        }
+        if(!this.#_products[productCode].length){
+            this.#_display = "Prodotto non disponibile";
+            return;
+        }
+        if (!this.#_isAffordable(this.#_products[productCode][0], this.#_price)) {
+            this.#_display = "Denaro non sufficiente";
+            return;
+        }
+        return this.#_products[productCode].pop();
+    }
+    insertMoney(amount) {
+        this.#_price += price;
+    }
+
+
 }
-console.debug(VendorMachine.isThePrice(0.20));
 class Prodotti{
     constructor(name, brand, codice, prezzo){
         this.name = name;
@@ -154,4 +179,7 @@ for (let outeridx = 0; outeridx < 3; outeridx ++){
     }
 }
 const vMachine = new VendorMachine(products);
+vMachine.insertMoney(2);
+const product = vMachine.buy(0);
+console.log(product);
 console.debug(vMachine.products);
