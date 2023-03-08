@@ -1,14 +1,11 @@
 import {login} from "./functions/loginconawait";
 
-
-
-
 document.querySelector('form').addEventListener('submit', e => {
 
     e.preventDefault();
 
-    email.document.querySelector("#email"),
-    password.document.querySelector('#password'),
+    const email = document.querySelector("#email").value; //sono un coglione, devo prendere il value, non il tag html
+    const password = document.querySelector('#password').value;
     login(email, password);
 
     

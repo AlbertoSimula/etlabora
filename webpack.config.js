@@ -1,7 +1,8 @@
 const path = require('path');
 
 module.exports = {
-    entry: ['./esercizi.js','./login.js'], /*di solito è index.js*/
+    entry: {esercizi:'./esercizi.js',
+    login: './login autenthication/login.js'}, /*di solito è index.js*/
     mode: 'development',
     module: {
         rules: [
@@ -19,6 +20,6 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: '[name].js',
     },
 };
