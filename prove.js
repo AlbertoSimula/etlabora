@@ -45,25 +45,26 @@ xhr.addEventListener("load", function(){
                 '</tr>'
         )
     });
+});
+xhr.send();
+
 /*se messo fuori non parte*/
-    var listButton = document.body.querySelectorAll('.btn');
+/*   var listButton = document.body.querySelectorAll('.btn');
 
     for(var i = 0; i<listButton.length; i=i+1){
         listButton[i].addEventListener("click", function(e){
             var row = e.target.parentElement.parentElement;
-            var xhr = new XMLHttpRequest();
+            var xhr = new XMLHttpRequest(); */
             /*queste nuove cose sono chiamate sotto verbo delete per togliere le righe. 200 è la risposta del BackEnd per effettuata cancellazione*/
-            xhr.open("DELETE","http://localhost:3000/users/".concat(row.dataset.userId));
-            xhr.addEventListener("load", function(){
-                if(xhr.status === 200){
-                    row.remove()
-                } else{
-                    console.error("Errore");
-                }
-            }); 
-            xhr.send();
-        });
-    }; 
-});
-/*ho messo dentro i link i json-server creati*/
-xhr.send();
+/*           xhr.open("DELETE","http://localhost:3000/users/".concat(row.dataset.userId));*/
+/*           xhr.addEventListener("load", function(){*/
+/*               if(xhr.status === 200){*/
+/*                   row.remove()*/
+/*               } else{*/
+/*                  console.error("Errore");*/
+/*              }*/
+            
+/*         xhr.send();*/
+/*      });*/
+ /*   }; */
+/*});*/

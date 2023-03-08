@@ -80,15 +80,20 @@ fattoriale(prompt("dimmi un numero e ci faccio il fattoriale"), "");
 console.log(res);
 */
 /*esercizi bubbling*/
+/*
+    *var butts = document.body.querySelectorAll("form button");
 
-var butts = document.body.querySelectorAll("form button");
-
-for(i=0; i<butts.length; i++){
-    butts[i].addEventListener("click", function(e){
-        e.preventDefault();
-        var email = document.body.querySelector('input[name="email"]'); /*meglio evitare di usare gli id, usare cose del genere*/
-        console.log(email.value);                                          /*potevo scrivere direttamente email.value e prendeva uguale*/
-        var psswd = document.body.querySelector('input[name="password"]')
+    *for(i=0; i<butts.length; i++){
+    *butts[i].addEventListener("click", function(e){
+    *    e.preventDefault();
+    *    var email = document.body.querySelector('input[name="email"]');*/ /*meglio evitare di usare gli id, usare cose del genere*/
+     /*   console.log(email.value);       */                                   /*potevo scrivere direttamente email.value e prendeva uguale*/
+    /*   var psswd = document.body.querySelector('input[name="password"]')
         console.log(psswd.value);
     });
 };
+*/
+
+const arr = [2, 45, 14, 27, 15, 38];
+const fn = arr.filter(n => n%2==1 && n>25);
+console.log(fn);

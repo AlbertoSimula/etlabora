@@ -1,6 +1,6 @@
-let xhr = new XMLHttpRequest();
+const xhr = new XMLHttpRequest();
 
-xhr.open("GET", "http://localhost:3000/");
+xhr.open("GET", "http://localhost:3000/post/");
 
 xhr.addEventListener("load", function(){
     const cards = JSON.parse(xhr.responseText);
@@ -20,3 +20,21 @@ xhr.addEventListener("load", function(){
 });
 
 xhr.send();
+const prr = new XMLHttpRequest();
+prr.open("GET", "http://localhost:3000/comments/");
+prr.addEventListener("load", function(){
+    const blocks = JSON.parse(prr.responseText);
+    console.log(blocks.length);
+    const comm = document.querySelector(".comments");
+    blocks.forEach(function(block){
+        comm.innerHTML = comm.innerHTML.concat(
+            '<div class="data-card="',block.id,'">',
+                    '<div class="card-body">',
+                        '<p class="card-text">',block.body,'</p>',
+                    '</div>',
+            '</div>'
+        )
+    });
+});
+
+prr.send();
