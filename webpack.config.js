@@ -2,6 +2,7 @@ const path = require("path");
 
 module.exports = {
   entry: {
+    chart: "./chart.js",
     esercizi: "./esercizi.js",
     login: "./login autenthication/login.js",
     socket: "/eserciziosocket/index.js",
