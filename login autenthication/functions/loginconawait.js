@@ -13,7 +13,7 @@ export const login = async (email,password) => {
 
     const data = await response.json();
     sessionStorage.setItem('user.token', data.token);
-    console.log(data.token);
+    console.log(data.token); //serve a me per vedere
     return data.token;
 };
 
