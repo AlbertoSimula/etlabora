@@ -11,16 +11,39 @@ const inputs = {
     continuity: 1
 };
 const data = {
-    labels: ["A","B","C","D","E","F","G","H"],
+    labels: [],
     datasets: [
     {
         label: 'Dataset',
-        data: [-10, 15, 11, 4, 9, 22, 32, -15],
-    }
-    ]
+        data: [],
+    }]
 };
 const chart = new Chart(ctx, {
     data, //evitabile perche è qualcosa che prende i dati da qualcosa di esterno
     type: 'line'
     
 });
+
+let lettera = 65;
+let nameId = data.labels;
+let dataId = data.datasets[0].data;
+const inserimento = setInterval(()=>{  //variabile dell'inserimento
+    
+    dataId.push(Math.random() * 100); //Math.random è tra 0 e 1
+    nameId.push(String.fromCharCode(lettera));
+
+    chart.update(); //aggiorna il grafico, reinderizzandolo per ogni punto nuovo
+
+    if(lettera === 90){
+        clearInterval(inserimento); //fermare variabile dell'inserimento
+        return;
+    }
+    lettera++;
+}
+, 500)
+
+
+/*
+* == confronta ignorando il tipo "1"==1 => True; 
+* === confronta prima il type, piu usato dato il tipizzamento dinamico, poi il valore
+*/
