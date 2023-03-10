@@ -47,3 +47,4 @@ const inserimento = setInterval(()=>{  //variabile dell'inserimento
 * == confronta ignorando il tipo "1"==1 => True; 
 * === confronta prima il type, piu usato dato il tipizzamento dinamico, poi il valore
 */
+

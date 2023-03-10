@@ -93,7 +93,10 @@ console.log(res);
     });
 };
 */
-
+/*
 const arr = [2, 45, 14, 27, 15, 38];
 const fn = arr.filter(n => n%2==1 && n>25);
 console.log(fn);
+
+*/
+
