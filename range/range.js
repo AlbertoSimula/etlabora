@@ -2,20 +2,27 @@ const [max, min, number] = document.querySelectorAll('input[name="max"], input[n
 
 const numbers = [];
 
-document.querySelector('.btn-send').addEventListener('click', (e) => {
+document.querySelector(".btn-send").addEventListener("click", (e) => {
+  numbers.push(Number(number.value));
 
-    numbers.push(number.value);
-
-    textarea.innerHTML += "\r\n".concat(
-            number.value
-        )
+  textarea.innerHTML += "\r\n".concat(number.value);
 });
 
 document.querySelector("form").addEventListener("submit", (e) => {
-    e.preventDefault();
-    console.log(numbers);
+  e.preventDefault();
 
-    if(number <= max && number >= min){
-        
+  for (const num of numbers) {
+    if (num <= max.value && num >= min.value) {
+      buoni.innerHTML += "\r\n".concat(num);
     }
+  }
+});
+
+document.querySelector(".btn-reset").addEventListener("click", (e) => {
+  e.preventDefault();
+
+  numbers.length = 0;
+
+  textarea.innerHTML = "";
+  buoni.innerHTML = "";
 });

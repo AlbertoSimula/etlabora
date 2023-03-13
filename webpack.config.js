@@ -13,19 +13,20 @@ module.exports = {
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
+        use: [{
+          loader: 
+            "babel-loader",
           options: {
-            presets: [
-              "@babel/preset-env",
-            ] /*permette di trasformare tutto ES6+ a ES5*/,
-          },
-        },
-      },
-    ],
-  },
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name].js",
-  },
-};
+            presets: 
+              ["@babel/preset-env"],
+            }
+          },{
+            loader: "prettier-loader"}, 
+        ],
+      }]
+    },
+    output: {
+      path: path.resolve(__dirname, "dist"),
+      filename: "[name].js",
+  }
+}

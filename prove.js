@@ -14,7 +14,7 @@ var es = elem.addEventListener("click", () => {
 */
 /*soluzione*/
 
-var listButton = document.body.querySelectorAll('.btn');
+listButton = document.body.querySelectorAll('.btn');
 
 for(var i = 0; i<listButton.length; i=i+1){
     listButton[i].addEventListener("click", function(e){
